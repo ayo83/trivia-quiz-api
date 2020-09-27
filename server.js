@@ -20,6 +20,13 @@ const { PORT } = process.env;
 // My Routers
 app.use(config.api.prefix, routes());
 
+
+
+//Welcome Message
+app.get('/', function(req, res){
+    res.json('GOOD TO SEE YOU, WELCOME TO TRIVIA QUIZ BACKEND APIS')
+});
+
 app.use((req, res, next) => {
     const err = new Error('Not Found');
     err.status = 404;
@@ -32,6 +39,11 @@ app.use((err, req, res, next) => {
             message: err.message,
         },
     });
+});
+
+//Welcome Message
+app.get('/', function(req, res){
+    res.json('Hello')
 });
 
 
